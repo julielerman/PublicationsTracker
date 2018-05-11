@@ -46,7 +46,7 @@ namespace Publications
         }
         private static void QueryAuthorWithArticleCountView()
         {
-           var results = _context.Authors.Include("AuthorArticleCounts").ToList();
+           var results = _context.Authors.Include("ArticleCount").ToList();
         }
     }
 }
