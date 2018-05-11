@@ -19,14 +19,13 @@ namespace Publications
         private static void PublisherQuery()
         {
             var publishers=_context.Query<Publisher>().FromSql("select name, yearincorporated from publishers");
-            
+
         }
 
         private static void QueryTypeFromSql()
         {
            
-            var anonymous=_context.Authors.FromSql("select authorname from authors").ToList();
-//var anon2=_context.Query().FromSql("select authorname from authors");
+            var anonymous=_context.Authors.FromSql("select authorid,authorname from authors").ToList();
 }
 
         private static void MagazineStats()
