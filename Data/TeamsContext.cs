@@ -31,7 +31,7 @@ namespace Publications
         {
             modelBuilder.Entity<Author>().Property(p => p.Name).HasColumnName("AuthorName");
             modelBuilder.Query<AuthorArticleCount>().ToView("View_AuthorArticleCounts");
-            modelBuilder.Query<AuthorArticleCount>().HasOne<Author>().WithOne().HasForeignKey<AuthorArticleCount>(a => a.AuthorId);
+      modelBuilder.Query<AuthorArticleCount>().HasOne<Author>().WithOne(a=>a.ArticleCount); //.HasForeignKey<AuthorArticleCount>(a => a.AuthorId);
             modelBuilder.Query<MagazineStatsView>().ToQuery(
                 () => Magazines.Select(  m => new MagazineStatsView(
                                m.Name,

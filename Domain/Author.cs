@@ -7,5 +7,6 @@ namespace Publications
         public int AuthorId { get; set; }
         public string Name { get; set; }
         public List<Article> Articles { get; set; }
+        public AuthorArticleCount ArticleCount{get;set;}
     }
 }

@@ -10,10 +10,10 @@ namespace Publications
         static void Main(string[] args)
         {
             //QueryAuthorArticleCountView();
-            //QueryAuthorWithArticleCountView();
+            QueryAuthorWithArticleCountView();
             //MagazineStats();
             //QueryTypeFromSql();
-            PublisherQuery();
+            //PublisherQuery();
         }
 
         private static void PublisherQuery()
@@ -46,9 +46,7 @@ namespace Publications
         }
         private static void QueryAuthorWithArticleCountView()
         {
-            //both of these fail at runtime via internal code when trying to work out the include
-            var results = _context.Authors.Include("AuthorArticleCounts").ToList();
-            //var results2=_context.AuthorArticleCounts.Include("Author").ToList();
+           var results = _context.Authors.Include("AuthorArticleCounts").ToList();
         }
     }
 }
